@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// import React, { useState, useEffect} from "react";
+import React from "react";
+import {BrowserRouter as Router} from "react-router-dom"
+// import Preloader from "./Components/Pre.js"
+import "./style.css";
+import "./App.css"
+import Navbar from "./Components/Navbar/Navbar.jsx";
 
 function App() {
+  // const [load, updateLoad] = useState(true);
+
+  // useEffect(()=>{
+  //   const timer = setTimeout(()=>{
+  //     updateLoad(false); 
+  //   },1200); 
+  // },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        {/* <Preloader load={load}/> */}
+        <Navbar/>
+      </Router>
     </div>
   );
 }
