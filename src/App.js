@@ -5,6 +5,7 @@ import {BrowserRouter as Router} from "react-router-dom"
 import "./style.css";
 import "./App.css"
 import Navbar from "./Components/Navbar/Navbar.jsx";
+import Home from "./Components/Home/Home";
 
 function App() {
   // const [load, updateLoad] = useState(true);
@@ -20,6 +21,7 @@ function App() {
       <Router>
         {/* <Preloader load={load}/> */}
         <Navbar/>
+        <Home/>
       </Router>
     </div>
   );
