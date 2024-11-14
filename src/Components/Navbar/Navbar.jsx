@@ -1,56 +1,36 @@
-import { Component } from "react";
-import React from "react";
+import React, { useState } from "react";
 import "./nstyle.css";
-import logo from "../../Assets/logo.png";
+import CustomTabButton from "../customComponets/customTabButton";
 
-class Navbar extends Component {
-  state = { clicked: false };
-  handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
+const Navbar = () => {
+  const [activeTab, setActiveTab] = useState("Home");
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
   };
-  render() 
-{
-    return (
-      <>
-        <div>
-          <nav>
-          <img src={logo} style={{width: "250px" , height: "100px"}} alt="brand" />
-            <div>
-              <ul
-                id="navbar"
-                className={this.state.clicked ? "#navbar active" : "#Navbar"}
-              >
-                <li>
-                  <a  href="index.html">
-                    home
-                  </a>
-                </li>
-                <li>
-                  <a href="index.html">shop</a>
-                </li>
-                <li>
-                  <a href="index.html">blog</a>
-                </li>
-                <li>
-                  <a href="index.html">contact</a>
-                </li>
-                <li>
-                  <a href="index.html">about </a>
-                </li>
-              </ul>
-            </div>
-            <div id="mobile" onClick={this.handleClick}>
-              <i
-                id="bar"
-                className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
-              >
-                {" "}
-              </i>
-            </div>
-          </nav>
-        </div>
-      </>
-    );
-  }
-}
+
+  return (
+    <nav style={{ paddingBottom: "0" }}>
+      <CustomTabButton
+        isActive={activeTab === "Home"}
+        onClick={() => handleTabClick("Home")}
+      >
+        Home
+      </CustomTabButton>
+      <CustomTabButton
+        isActive={activeTab === "Contact"}
+        onClick={() => handleTabClick("Contact")}
+      >
+        Contact
+      </CustomTabButton>
+      <CustomTabButton
+        isActive={activeTab === "About"}
+        onClick={() => handleTabClick("About")}
+      >
+        About
+      </CustomTabButton>
+    </nav>
+  );
+};
+
 export default Navbar;

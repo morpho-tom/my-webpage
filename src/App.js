@@ -5,7 +5,7 @@ import {BrowserRouter as Router} from "react-router-dom"
 import "./style.css";
 import "./App.css"
 import Navbar from "./Components/Navbar/Navbar.jsx";
-import Home from "./Components/Home/Home";
+import Home from "./Components/Home/index.js";
 
 function App() {
   // const [load, updateLoad] = useState(true);
